@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -16,17 +17,26 @@
         </nav>
     </header>
     <main>
-        <h1>Login</h1>
-        <p>Provide details to login to your account</p>
-        <form action="dashboard.html">
-            <div>
-                <label for="email">Email :</label>
-                <input type="email" name="email" id="" required placeholder="Enter your email">
-                <label for="password">Password :</label>
-                <input type="password" name="password" id="" required placeholder="Enter password">
+        <div id="con">
+            <div id="main">
+                <h1>Login</h1>
+                <p>Provide details to login to your account</p>
+                <form action="dashboard.html">
+                    <div id="details">
+                        <div id="input">
+                            <label for="email">Email :</label>
+                            <input type="email" name="email" id="" required placeholder="Enter your email">
+                        </div>
+                        <div id="input">
+                            <label for="password">Password :</label>
+                            <input type="password" name="password" id="" required placeholder="Enter password">
+                        </div>
+                        <button type="submit">Login</button>
+                    </div>
+                </form>
             </div>
-            <button type="submit">Login</button>
-        </form>
+        </div>
+
     </main>
 </body>
 

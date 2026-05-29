@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -13,23 +14,34 @@
             <a href="dashboard.html">Home</a>
             <a href="addstd.html">AddStudent</a>
             <a href="viewstd.html">ViewStudent</a>
-            <a href="index.html">LogOut</a>
+            <a href="logout.html">LogOut</a>
         </nav>
     </header>
-    <h1>Add the new Student</h1>
+    <h1 id="addh1">Add the new Student</h1>
     <form action="viewstd.html">
-        <h3>Enter the details</h3>
-        <div>
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="" required placeholder="Enter the name">
-            <label for="rollno">Roll Number :</label>
-            <input type="text" name="rollno" id="" required placeholder="Enter RollNo">
-            <label for="branch">Branch</label>
-            <input type="text" name="branch" id="" required placeholder="Enter Branch"><br>
-            <label for="cgpa">CGPA</label>
-            <input type="number" name="cgpa" id="" min="0" max="10" required placeholder="Enter CGPA">
+        <div id="con">
+            <div id="main">
+                <div id="details">
+                    <div id="input">
+                        <label for="name">Name:</label>
+                        <input type="text" name="name" id="" required placeholder="Enter the name">
+                    </div>
+                    <div id="input">
+                        <label for="rollno">Roll Number :</label>
+                        <input type="text" name="rollno" id="" required placeholder="Enter RollNo">
+                    </div>
+                    <div id="input">
+                        <label for="branch">Branch</label>
+                        <input type="text" name="branch" id="" required placeholder="Enter Branch">
+                    </div>
+                    <div id="input">
+                        <label for="cgpa">CGPA</label>
+                        <input type="number" name="cgpa" id="" min="0" max="10" required placeholder="Enter CGPA">
+                    </div>
+                    <button type="submit">Add Studnet</button>
+                </div>
+            </div>
         </div>
-        <button type="submit">Add Studnet</button>
     </form>
 </body>
 

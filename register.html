@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -15,22 +16,33 @@
             <a href="register.html">Register</a>
         </nav>
     </header>
-
-    <h1>Create Your Account</h1>
+    <h1 id="h1reg">Create Your Account</h1>
     <form action="login.html">
-        <h3>Register</h3>
-        <div>
-            <label for="name">Name : </label>
-            <input type="text" name="name" id="" required placeholder="Enter Your Name"> <br>
-            <label for="email">Email : </label>
-            <input type="email" name="email" id="" required placeholder="Enter Your Email"><br>
-            <label for="password">Password : </label>
-            <input type="password" name="password" id="" required placeholder="Enter Your Password"><br>
-            <label for="cpassword">Confirm Password : </label>
-            <input type="password" name="cpassword" id="" required placeholder="Confirm your password"><br>
+        <div id="con">
+            <div id="main">
+                <h1>Register</h1>
+                <div id="details">
+                    <div id="input">
+                        <label for="name">Name : </label>
+                        <input type="text" name="name" id="" required placeholder="Enter Your Name">
+                    </div>
+                    <div id="input">
+                        <label for="email">Email : </label>
+                        <input type="email" name="email" id="" required placeholder="Enter Your Email">
+                    </div>
+                    <div id="input">
+                        <label for="password">Password : </label>
+                        <input type="password" name="password" id="" required placeholder="Enter Your Password">
+                    </div>
+                    <div id="input">
+                        <label for="cpassword">Confirm Password : </label>
+                        <input type="password" name="cpassword" id="" required placeholder="Confirm your password">
+                    </div>
+                    <p id="regp">Already have an account? <a id="rega" href="login.html">login</a></p>
+                    <button type="submit">Register</button>
+                </div>
+            </div>
         </div>
-        <p>Already have an account? <a href="login.html">login</a></p>
-        <button type="submit">Register</button>
     </form>
 </body>
 
