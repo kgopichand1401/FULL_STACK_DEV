@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic</title>
+    <style>
+        #con {
+            width: 200px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            border: 1px solid black;
+            padding: 20px;
+            background-color: black;
+        }
+
+        .btn {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+        }
+
+        #red {
+            border: 2px solid red;
+            animation: red 1s;
+        }
+
+        #yellow {
+            border: 2px solid yellow;
+            animation: yellow 1s;
+            animation-delay: 2s;
+        }
+
+        #green {
+            border: 2px solid green;
+            animation: green 1s;
+            animation-delay: 4s;
+        }
+
+        @keyframes red {
+            from {
+                background-color: white;
+            }
+
+            to {
+                background-color: red;
+
+            }
+        }
+
+        @keyframes yellow {
+            from {
+                background-color: white;
+            }
+
+            to {
+                background-color: yellow;
+            }
+        }
+
+        @keyframes green {
+            from {
+                background-color: white;
+            }
+
+            to {
+                background-color: green;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con">
+        <div class="btn" id="red"></div>
+        <div class="btn" id="yellow"></div>
+        <div class="btn" id="green"></div>
+    </div>
+</body>
+
+</html>

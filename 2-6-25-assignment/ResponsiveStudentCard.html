@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #maincon {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #con {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+
+        @media (max-width:768px) {
+            #con {
+                flex-direction: column;
+            }
+        }
+
+        #mainc {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            height: 300px;
+            border: 1px solid black;
+            transition: smooth;
+
+        }
+
+        /* ex:6 */
+        #mainc:hover {
+            transform: scale(1.2);
+        }
+
+        /* ex:8 */
+        #img img:hover {
+            transform: scale(1.2);
+            margin-right: 50px;
+        }
+
+        #mainc h1 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bolder;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="maincon">
+        <div id="mainc">
+            <h1>Student Card</h1>
+            <div id="con">
+                <div id="img">
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAlAMBIgACEQEDEQH/xAAcAAEAAAcBAAAAAAAAAAAAAAAAAQMEBQYHCAL/xABBEAABAwMCAwUEBwUGBwAAAAABAAIDBAURBiESMUEHE1FhcSIygZEUI1JiobHBQoLC0eEIQ1OTovAVMzREcqOy/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAECBAUD/8QAIBEBAQEAAQQDAQEAAAAAAAAAAAECEQMSITEEE1EiQf/aAAwDAQACEQMRAD8A3iiIgIiICIiAiIgIpFZWU9FA6esnjghYMuklcGgfEq12fVlhvcz4bZdKeeVpwYwcOPmAeY8wgvaIiAiIgIiICIiAiIgIiICIiAoZVnvmpLZZYpnVdVH3sULpnQNcDJwDmeHPJai1P20V9UHQ6epW0kZyO+nAfJ8B7o/FRLLeBue7Xm22an7+6VkNLH0MjgC4+AHMn0Wq9UdtUbC+HTVHxuzj6TVD2fVrAfz+S09cLjW3KodU3CrnqJnc3zSF5+Z/JUwBPIElSLpfdQ3a/wA/fXavmqHdGudhrfRo2HwVtje+KQSRvcx7TkFpwR4KPdSf4bvkod2/q0/JBnml+1e/2XghrXi40owOGc+20eT+fzytu6Y7SdO6gDI21P0Oqdt3FUQ0k+Rzg/PPkuZeFw5tPyUDt5IOzOIKK5e0x2h6h07wsp6w1NMD/wBPVZkYB93fLfgVt3THa5YbtwxXEm2VHL645jP7/T44QbERS4ZY542ywyNkjcMtew5BHkVMQEREBERAREQEREGB6u0HbqyavulK+SnuFdCaaV5cXRnj4W8RaeowOWFpbVGgtQ6aL5KyiM1I3/uqX24wPPq34hdM3OMy0rmj3veGPEb/AKKpjcJIw7xG4VJL3Wp/xyBQxxyRl5AdvjPNVoGNuXos67YLfS0WrImUFLFCZ6dr3shZjjeXOGcDrsFj9LpPUNWAYbRUcJ/afhg/1EK1snskt9LKqeUYcsxj0BqF/OnhYfAyjP4JJ2d3/h9qKD/N/oq/Zn9W+vX4wxeXMa4bgfJZPUaD1LCC5luM7R/hSNJ/EhWO426vtp4a6kmp3EEtMjCM+h5FTNS+lbmz3FFbrbW3Os+iWykmqpydo4WcR+PgPVbO0v2LV1SWT6kq20kfP6NTEPkPq73R8M+q21o230Vv03b20NLDAJKeN7+7aBxOLQST4nJV7VkLfYrRR2K2Q223RmOmhGGNc8uO5yck+auCIgIiICIiAiIgIiIJeTx4PwXluO9fjkMA+qmObkbbEKlrOJlJJjYk7/NRq8TlMnN4YJrCn77Wttq7axlXWimd9VKeGOINdtIXAE/tHbqQNwqC+aeu134ZblX0LC3DGCOCXqcAbSDJJPgrtC7h1k8SHeagAjz14JDxf/bVXX200t8tU1urTI2GbhIfG7DmOaQWuHmCFi1vu1Lr02zHbmzPtr6w26GgB1HSSx19JbpyysMAdDLT494mNwPEADk4PLllXS93S2ayENvs/eVUsRM7zITBFE0DBe8ubvz2A+auTLDQ6Q0NfaWjkmn7+mmfNJNjLz3ZaGgDYDl8ypduoYG340dQxobU2CKJzG7cQa5zXjbykaranT58K5+zjysdm0qai41FNQXOjFdRkPkgfTztcwbEOGXt4huNwrnrClvEtjlF2FDPTRe26pp2Oa+nHV/ASeIAZyMgq6aQ0dR6Xr6qujraqsqp4+6a6YAcDCQTnHM7Dfy5Kv1RMyDTd0lkGWtpZMjx9k7KNXM1O1OZq5vcymzthgt9PTU8veMgibGHHmQBgFVyxqwccAooHe+IQ1/wb/MLJByWnp775yzdTHZeEURF6PMREQEREBERAREQF4kY2Rha8bHmvaJfIxLUVhlnbDUU9R3FXTP4qaoDc4zsWuHVpGxCtortQxDhnstPK/7dPV+y7zw4ZH4rOaqLvYHMHM8vVWLBbsRusXVz2Vt6Ou+efbHZaO6XmSNt4FPSUMb2v+iwSl7pS05bxuIG2d+EDfA3VXdbc+sfDU01Synrac8UEmMg5GC1w6tPUeQKvkMzGN4JYhIz0BI+a9uqIMfU0wB8XMaPyUSSznuWt167WNtr9QRt4Z7LTyvH7dPWANPwc3I/FSnUN2vNRTsurKenpmyh7aOF5eZXA5HeOIGwIBwB0G5WQuO5LuZVRaYTNUmcj2I9m+ZVM/1riLa/nPNVVtoHU7jLM4OlIwMcgrimEW/OZmcRg1q6vNERFZUREQEREBERAREQEREBW+toO8cZYnBj+o6FV5IHMqTO7iicGe8QQFTeZqcVbOrm8xjn0jBw5u/ko/SR0aVUy0chHtR8uo3VN9DcTsT8lzbjfPp0876dnmplFCa+VzHP4GtGTjmVkEMTIY2sjAa0dArLbYn0tT3jscBaQd91eWTxO5OHx2W34+OM82eWL5O+dcS+E5Eyi0M4iIgIiICIiAiIgKDnBoJOwHMqK1d276jntllprTRymOS4l3fOBwe5aNwPUkD0ygrr12v6atlwFHCait4X8Ms1Oz2I/HBPvfu5WXWm90N7omVlrq46iB/JzOnkRzB8iuRxsMDkrhZL1crDWistNU+nl/aA3bIPBw6/75IOs0WuNF9qtvvPBSXlraGtOwcXfVyHyPQ+R+GVsZj2vaHMILTyIQRVLMfrCqpUs3/MKJeERW69Xu3WOkdVXOqjgiH2ju4+AHMnyCIXNkkjfccQsc1J2lWbTcraeqkdV1WRxQUwBc0eJPIehK1Zq/tSuF146WyB9DSHbvc/WvH8P5+i19zJO+ScnPUoOsdL6qtGqKM1Noqe94dpInDhfGfBzT+fJXtclaSv9RpnUFJdKZ+Ax4bO3O0kRI4mn4bjzAXWcT2yRsew5a4Ag+SD0iIgIiICIiAtB/2iZQ7Udph6sonPx6vx/Ct+Lnf+0C7i1zTD7FtjHzkkKDW7XY5r2N1JUxnJBF24wRn1WZaP7RrtpxzYJnOraAf3UjvbYPuuP5H8Fhy8u5lB1LpjV9p1HSiWhqG8Q9+N2zmH7w6fl5q51cscRc6R4A57rk6irKigqmVVFPJBOw+zJG7BH8x5HZXi/a0vl+pW0tdV8NO1uHRwN7sS42y7ff05eSDZusO1WkoC+jsAZV1I9kyk5ijPqPePkNvNagut1rbzVmquVTJUTHOC87NHg0cgPRSqGgrLhN3NBST1MmR7MMZfj1xyV2r9G6htsDZqq2TcBGXd37ZZ/wCQbnCrd5z4tTM2+ljCg52F65HBUl3vFWQ8ynMbs/ZK7E0/L39hts3PvKSJ3zYCuOzyXW+g5DLomwPO5Ntp8+vdtQX1ERAREQEREBc39u8nHr97fsUULfxcf1XSBXMvbVJ3naLXfciiZ/o/qgwZTGclLUxnJEPRXg8z6heyvH80SeHqoevgfzUR+qh0+BQbb7J3/wDDLRLK6oh7iseHB4/uZAeHgfnqcAg8vwWd1dTFBEHuzLVykhsbCMvPQDpnA/U7Lna1XWttFQ+egm4HOZwva5oc17fBzTsQrtV6xu9VTPpmmlpWObwOdSwCNxb9nOSQPIYXL+R8HXV63fz4acdbOc8LffaY0l5rITURVDhIXPkh9wud7RA9CcZ8la3e8VNAxyGFKd7xXTk4nDNfN5QXVvZpJ3mgLA4dKKNvyGP0XKS6j7I5O87O7J92Et+TipGYIiICIiAiIggVy52uOLu0W856SMA/y2oiDEFMZyREQ9LwOfxRESDp6qHh6IiAeX7q9N5lRRBFSne8URBBdNdiri7s6tuejpR/7HIiDOUREBERB//Z"
+                        alt="">
+                </div>
+                <div id="details">
+                    <h2>Name : FSD</h2>
+                    <p>Branch : CSE</p>
+                    <p>Email : 123@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
