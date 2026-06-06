@@ -27,9 +27,10 @@ nav a {
 
 nav a:hover {
     color: yellow;
-    text-decoration: underline;
+    border-bottom: 1px solid yellow;
     transition-delay: 300ms;
     transition: ease-in-out;
+    padding-bottom: 2px;
 }
 
 #imain {
@@ -109,6 +110,8 @@ nav a:hover {
     border: 2px solid black;
     border-radius: 8px;
     font-size: 22px;
+    background-color: #e8f0fe;
+    font-weight: 500;
 }
 
 #details button {
@@ -208,4 +211,15 @@ tr:nth-child(even) {
 #lop {
     text-align: center;
     margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 }
