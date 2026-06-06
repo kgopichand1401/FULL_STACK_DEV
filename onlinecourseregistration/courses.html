@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar bg-white navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="d-flex align-content-center">
+                <img src="data:image/jpeg;base64,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"
+                    class="me-2" style="height: 56px;" alt="logo">
+                <a class="navbar-brand" href="#">Online Course Registration</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="d-flex justify-content-center col-lg-4 gap-5">
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Courses
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">JAVA</a></li>
+                                <li><a class="dropdown-item" href="#">CCD</a></li>
+                                <li><a class="dropdown-item" href="#">PYTHON</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <a class="btn btn-primary" href="registration.html">Login</a>
+        </div>
+    </nav>
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Available Courses</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Web Development</h5>
+                            <p class="card-text">Learn to build responsive and modern websites using HTML, CSS, and
+                                JavaScript.</p>
+                            <a href="#" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Python Programming</h5>
+                            <p class="card-text">Master Python fundamentals and apply them to real-world projects.</p>
+                            <a href="#" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Science</h5>
+                            <p class="card-text">Analyze data, build models, and gain insights using modern tools.</p>
+                            <a href="#" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">AI & Machine Learning</h5>
+                            <p class="card-text">Explore algorithms and techniques to build intelligent systems.</p>
+                            <a href="#" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Java Programming</h5>
+                            <p class="card-text">Develop robust applications with one of the most popular programming
+                                languages.</p>
+                            <a href="#" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Cloud Computing</h5>
+                            <p class="card-text">Understand cloud platforms and deploy scalable applications.</p>
+                            <a href="#" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="bg-body-tertiary text-center text-lg-start mt-5">
+        <div class="container py-4">
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <h5 class="fw-bold">Address</h5>
+                    <p class="text-muted mb-0">Talent Academy, 123 Learning Street, Banglaore, Inida</p>
+                </div>
+                <div class="col-12 col-md-4">
+                    <h5 class="fw-bold">Phone Number</h5>
+                    <p class="text-muted mb-0">+91 1234567890</p>
+                </div>
+                <div class="col-12 col-md-4">
+                    <h5 class="fw-bold">Email</h5>
+                    <p class="text-muted mb-0">support@talentacademy.com</p>
+                </div>
+            </div>
+
+            <div class="mt-4 d-flex justify-content-center gap-2 flex-wrap">
+                <a href="https://facebook.com" class="btn btn-outline-primary btn-sm" target="_blank"
+                    aria-label="Facebook">Facebook</a>
+                <a href="https://twitter.com" class="btn btn-outline-info btn-sm" target="_blank"
+                    aria-label="Twitter">Twitter</a>
+                <a href="https://instagram.com" class="btn btn-outline-danger btn-sm" target="_blank"
+                    aria-label="Instagram">Instagram</a>
+                <a href="https://linkedin.com" class="btn btn-outline-secondary btn-sm" target="_blank"
+                    aria-label="LinkedIn">LinkedIn</a>
+            </div>
+
+            <div class="text-center mt-4 pb-2">
+                @ <span id="year">2026</span> All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
