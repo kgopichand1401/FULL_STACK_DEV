@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script src="index.js"></script>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </nav>
+    </header>
+    <h1 id="h1reg">Create Your Account</h1>
+    <form method="get" onsubmit=register()>
+        <div id="con">
+            <div id="main">
+                <h1>Register</h1>
+                <div id="details">
+                    <div id="input">
+                        <label for="name">Name : </label>
+                        <input type="text" name="name" id="rname" required placeholder="Enter Your Name">
+                    </div>
+                    <div id="input">
+                        <label for="email">Email : </label>
+                        <input type="email" name="email" id="rmail" required placeholder="Enter Your Email">
+                    </div>
+                    <div id="input">
+                        <label for="password">Password : </label>
+                        <input type="password" name="password" id="rpassword" required
+                            placeholder="Enter Your Password">
+                    </div>
+                    <div id="input">
+                        <label for="cpassword">Confirm Password : </label>
+                        <input type="password" name="cpassword" id="rcpassword" required
+                            placeholder="Confirm your password">
+                    </div>
+                    <p id="regp">Already have an account? <a id="rega" href="login.html">login</a></p>
+                    <button type="submit">Register</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

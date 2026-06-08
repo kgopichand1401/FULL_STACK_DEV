@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="dashboard.html">Home</a>
+            <a href="addstd.html">AddStudent</a>
+            <a href="viewstd.html">ViewStudent</a>
+            <a href="logout.html">LogOut</a>
+        </nav>
+    </header>
+    <h1 id="addh1">Add the new Student</h1>
+    <form onsubmit=addStd()>
+        <div id="con">
+            <div id="main">
+                <div id="details">
+                    <div id="input">
+                        <label for="name">Name:</label>
+                        <input type="text" name="name" id="sname" required placeholder="Enter the name">
+                    </div>
+                    <div id="input">
+                        <label for="rollno">Roll Number :</label>
+                        <input type="text" name="rollno" id="srno" required placeholder="Enter RollNo">
+                    </div>
+                    <div id="input">
+                        <label for="branch">Branch :</label>
+                        <input type="text" name="branch" id="sbranch" required placeholder="Enter Branch">
+                    </div>
+                    <div id="input">
+                        <label for="cgpa">CGPA :</label>
+                        <input type="number" name="cgpa" id="scgpa" min="0" step="0.01" max="10" required
+                            placeholder="Enter CGPA">
+                    </div>
+                    <button type="submit">Add Studnet</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
