@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
 </head>
 
 <body>
@@ -17,26 +18,27 @@
             <a href="logout.html">LogOut</a>
         </nav>
     </header>
-    <form action="viewstd.html">
+    <form onsubmit="saveStudent(event)">
         <h1 id="addh1">Make the changes</h1>
         <div id="con">
             <div id="main">
                 <div id="details">
                     <div id="input">
                         <label for="name">Name:</label>
-                        <input type="text" name="name" id="" required placeholder="Enter the name">
+                        <input type="text" name="name" id="sname" required placeholder="Enter the name">
                     </div>
                     <div id="input">
                         <label for="rollno">Roll Number :</label>
-                        <input type="text" name="rollno" id="" required placeholder="Enter RollNo">
+                        <input type="text" name="rollno" id="srno" required placeholder="Enter RollNo">
                     </div>
                     <div id="input">
                         <label for="branch">Branch :</label>
-                        <input type="text" name="branch" id="" required placeholder="Enter Branch">
+                        <input type="text" name="branch" id="sbranch" required placeholder="Enter Branch">
                     </div>
                     <div id="input">
                         <label for="cgpa">CGPA :</label>
-                        <input type="number" name="cgpa" id="" min="0" max="10" required placeholder="Enter CGPA">
+                        <input type="number" name="cgpa" id="scgpa" min="0" step="0.01" max="10" required
+                            placeholder="Enter CGPA">
                     </div>
                     <button type="submit">Save Changes</button>
                 </div>
