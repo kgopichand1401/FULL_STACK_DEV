@@ -1,7 +1,4 @@
-
-const students = []
-
-function register() {
+async function register() {
     event.preventDefault()
     var rname = document.getElementById("rname").value;
     var remail = document.getElementById("rmail").value;
@@ -12,45 +9,65 @@ function register() {
         alert("Pass MisMatch Re-Enter the password")
         return
     }
+    let user = { username: rname, email: remail, password: rpassword, cpassword: rcpassword }
 
-    var entry = {
-        rname, remail, rpassword, rcpassword
+    let response1 = await fetch("http://localhost:3000/users", {
+        method: "GET"
+    })
+    let users = await response1.json()
+    if (users.find(e => e.email === remail)) {
+        alert("Email ALready Exists")
+        return
     }
 
-    window.localStorage.setItem(`entry`, JSON.stringify(entry))
+    let existuser = users.some(e => e.email == remail)
+    if (existuser) {
+        alert("Mail Already Register Try Login")
+        return
+    }
 
+    var response = await fetch("http://localhost:3000/users", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(user)
+    })
+    if (response) {
+        window.location.href = "login.html"
+    } else {
+        alert("Server Error")
+    }
 
-    window.location.href = "login.html"
 }
 
-function validateLogin() {
+async function validateLogin() {
     event.preventDefault()
 
     var lmail = document.getElementById("lemail").value;
     var lpass = document.getElementById("lpass").value
-    var entry = JSON.parse(window.localStorage.getItem('entry'))
 
-    if (!entry) {
-        alert("No User Found Register");
-        window.location.href = "register.html";
+    const response = await fetch("http://localhost:3000/users", {
+        method: "GET"
+    })
+    let Users = await response.json()
+    console.log(Users);
+
+    let existuser = Users.find(e => e.email === lmail)
+    if (existuser) {
+        if (lpass !== existuser.password) {
+            alert("Invalid Password")
+            return
+        }
+        window.location.href = "dashboard.html"
+    } else {
+        alert("Email Doesnot Exist")
         return
     }
 
-    var remail = entry.remail
-    var rpass = entry.rpassword
-
-    if (lmail !== remail) {
-        alert("Invalid Email")
-        return
-    }
-    if (lpass !== rpass) {
-        alert("Invalid Password")
-        return
-    }
-    window.location.href = "dashboard.html"
 }
 
-function addStd(event) {
+async function addStd(event) {
     event.preventDefault()
 
     var sname = document.getElementById("sname").value
@@ -59,19 +76,42 @@ function addStd(event) {
     var scgpa = document.getElementById("scgpa").value
 
     const std = { sname, sbranch, srno, scgpa }
-
-    var existing = JSON.parse(localStorage.getItem('students')) || []
-    existing.push(std);
-
-    localStorage.setItem('students', JSON.stringify(existing))
-
-    window.location.href = "viewstd.html"
+    const response = await fetch("http://localhost:3000/students", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(std)
+    })
+    if (response) {
+        window.location.href = "viewstd.html"
+    } else {
+        alert("Server error")
+    }
 }
 
-function viewStudents() {
+async function viewStudents() {
     var studentTableBody = document.getElementsByTagName("tbody")[0]
 
-    var students = JSON.parse(localStorage.getItem('students')) || []
+    if (!studentTableBody) return
+
+    const response = await fetch("http://localhost:3000/students", {
+        method: "GET"
+    })
+    let students = await response.json()
+
+    if (students.length === 0) {
+        var row = document.createElement("tr")
+        var td = document.createElement("td")
+        td.colSpan = 6
+        td.style.color = "red"
+        td.textContent = "No Students Available"
+
+        row.appendChild(td)
+        studentTableBody.appendChild(row)
+        return
+    }
+
 
     students.forEach(function (student, index) {
         var row = document.createElement("tr")
@@ -118,19 +158,18 @@ function getSelectedStudentIndex() {
     return params.get("index")
 }
 
-function loadSelectedStudent() {
+async function loadSelectedStudent() {
     var nameInput = document.getElementById("sname")
     var rollNoInput = document.getElementById("srno")
     var branchInput = document.getElementById("sbranch")
     var cgpaInput = document.getElementById("scgpa")
 
     var selectedIndex = getSelectedStudentIndex()
-    var students = JSON.parse(localStorage.getItem('students')) || []
+    var response = await fetch("http://localhost:3000/students")
+    let students = await response.json()
     var selectedStudent = students[selectedIndex]
 
     if (!selectedStudent) {
-        alert("Student not found")
-        window.location.href = "viewstd.html"
         return
     }
 
@@ -140,33 +179,41 @@ function loadSelectedStudent() {
     cgpaInput.value = selectedStudent.scgpa
 }
 
-function saveStudent(event) {
+async function saveStudent(event) {
     event.preventDefault()
 
     var selectedIndex = getSelectedStudentIndex()
-    var students = JSON.parse(localStorage.getItem('students')) || []
-
-    if (!students[selectedIndex]) {
-        alert("Student not found")
-        window.location.href = "viewstd.html"
-        return
-    }
-
-    students[selectedIndex] = {
+    const response = await fetch("http://localhost:3000/students", {
+        method: "GET"
+    })
+    var students = await response.json()
+    const std = students[selectedIndex]
+    var crtstd = {
         sname: document.getElementById("sname").value,
         srno: document.getElementById("srno").value,
         sbranch: document.getElementById("sbranch").value,
-        scgpa: document.getElementById("scgpa").value
+        scgpa: document.getElementById("scgpa").value,
     }
-
-    localStorage.setItem('students', JSON.stringify(students))
-    window.location.href = "viewstd.html"
+    const res = await fetch(`http://localhost:3000/students/${std.id}`, {
+        method: "PUT",
+        body: JSON.stringify(crtstd)
+    })
+    if (res) {
+        window.location.href = "viewstd.html"
+    } else {
+        console.log("error");
+    }
 }
 
-function deleteStudent(index) {
-    var students = JSON.parse(localStorage.getItem('students')) || []
-    students.splice(index, 1)
-    localStorage.setItem('students', JSON.stringify(students))
+async function deleteStudent(index) {
+    var response = await fetch("http://localhost:3000/students")
+    var students = await response.json()
+    var delstd = students[index]
+    console.log(delstd);
+
+    await fetch(`http://localhost:3000/students/${delstd.id}`, {
+        method: "DELETE"
+    })
     window.location.reload()
 }
 
